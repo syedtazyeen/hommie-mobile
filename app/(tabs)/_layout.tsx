@@ -6,11 +6,14 @@ export default function TabLayout() {
   return (
     <Tabs
       tabBar={(props) => <TabBar {...props} />}
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: { backgroundColor: "white" },
+      }}
     >
-      <Tabs.Screen name="index" options={{ title: "Explore" }} />
-      <Tabs.Screen name="matches" options={{ title: "Activities" }} />
-      <Tabs.Screen name="profile" options={{ title: "Activities" }} />
+      <Tabs.Screen name="index" options={{ title: "Home" }} />
+      <Tabs.Screen name="matches" options={{ title: "Matches" }} />
+      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
     </Tabs>
   );
 }
