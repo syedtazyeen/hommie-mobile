@@ -1,20 +1,15 @@
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import {
-  View,
-  Text,
-  Pressable,
-  PressableProps,
-  useColorScheme,
-} from "react-native";
-import CardsFilled from "../icons/CardsFilled";
+import { View, Pressable, PressableProps } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
-import FlashListFilled from "../icons/FlashListFilled";
+import HomeOutline from "../icons/HomeOutline";
+import UserOutline from "../icons/UserOutline";
+import LinkRoundOutline from "../icons/LinkRoundOutline";
 
 const icons: Record<string, React.ReactNode> = {
-  index: <CardsFilled size={30} />,
-  matches: <FlashListFilled size={30} />,
-  profile: <FlashListFilled size={30} />,
+  index: <HomeOutline size={26} />,
+  matches: <LinkRoundOutline size={26} />,
+  profile: <UserOutline size={26} />,
 };
 
 export default function TabBar({
@@ -22,7 +17,6 @@ export default function TabBar({
   descriptors,
   navigation,
 }: BottomTabBarProps) {
-  const colorScheme = useColorScheme();
   return (
     <View
       style={{
@@ -110,16 +104,18 @@ function TabButton({
       >
         <View
           style={{
-            borderRadius: 16,
-            padding: 6,
+            borderRadius: 14,
+            padding: 8,
             backgroundColor: isActive
               ? Colors["app"].primarySuperLight
               : "transparent",
           }}
         >
-          {React?.cloneElement(icon, {
-            color: isActive ? Colors["app"].primary : Colors["light"].icon,
-          })}
+          {icon &&
+            React.cloneElement(icon, {
+              color: isActive ? Colors["app"].primary : Colors["light"].icon,
+              fill: isActive ? Colors["app"].primaryLight : "transparent",
+            })}
         </View>
       </View>
     </Pressable>

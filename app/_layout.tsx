@@ -8,7 +8,7 @@ import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
-  initialRouteName: "(tabs)",
+  initialRouteName: "auth/index",
 };
 
 SplashScreen.preventAutoHideAsync();
