@@ -8,8 +8,12 @@ const tintColorDark = "#fff";
 export const Colors = {
   app: {
     primary: "#3461fd",
-    primaryLight: "#3461fd30",
-    primarySuperLight: "#3461fd10",
+    primary30: "#3461fd30",
+    primary10: "#3461fd10",
+    green: "#44db6c",
+    greenDark: "#2fb553",
+    yellow: "#dec418",
+    orange: "#db9327",
   },
   light: {
     text: "#11181C",
@@ -17,6 +21,7 @@ export const Colors = {
     border: "#e1e1e1",
     borderLight: "#f2f2f2",
     tint: tintColorLight,
+    shadow: "#a6a6a6",
     icon: "#969696",
     tabIconDefault: "#687076",
     tabIconSelected: tintColorLight,

@@ -3,7 +3,6 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 export { ErrorBoundary } from "expo-router";
 
@@ -15,8 +14,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    ...FontAwesome.font,
+    Extralight: require("../assets/fonts/Quicksand-Light.ttf"),
+    Light: require("../assets/fonts/Quicksand-Regular.ttf"),
+    Regular: require("../assets/fonts/Quicksand-Medium.ttf"),
+    Semibold: require("../assets/fonts/Quicksand-SemiBold.ttf"),
+    Bold: require("../assets/fonts/Quicksand-Bold.ttf"),
   });
 
   useEffect(() => {

@@ -106,15 +106,13 @@ function TabButton({
           style={{
             borderRadius: 14,
             padding: 8,
-            backgroundColor: isActive
-              ? Colors["app"].primarySuperLight
-              : "transparent",
+            backgroundColor: isActive ? Colors["app"].primary10 : "transparent",
           }}
         >
           {icon &&
             React.cloneElement(icon, {
               color: isActive ? Colors["app"].primary : Colors["light"].icon,
-              fill: isActive ? Colors["app"].primaryLight : "transparent",
+              fill: isActive ? Colors["app"].primary30 : "transparent",
             })}
         </View>
       </View>
