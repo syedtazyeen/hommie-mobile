@@ -7,7 +7,7 @@ import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
-  initialRouteName: "auth/index",
+  initialRouteName: "(auth)/onboard",
 };
 
 SplashScreen.preventAutoHideAsync();
@@ -42,6 +42,7 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={DefaultTheme}>
       <Stack>
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>

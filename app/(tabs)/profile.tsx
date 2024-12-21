@@ -1,13 +1,16 @@
 import EditOutline from "@/components/icons/EditOutline";
+import { TextBold } from "@/components/StyledText";
 import { Text, View } from "@/components/Themed";
 import { Colors } from "@/constants/Colors";
 import { Image, Pressable } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { router } from "expo-router";
 
 export default function ProfileTab() {
   return (
     <View
       lightColor={Colors["light"].background}
-      style={{ flex: 1, padding: 16 }}
+      style={{ flex: 1, padding: 16,flexDirection:"column",justifyContent:"space-between" }}
     >
       <View>
         <View
@@ -64,6 +67,30 @@ export default function ProfileTab() {
           </Text>
         </View>
       </View>
+      <Pressable
+        onPress={() => {
+          AsyncStorage.clear()
+            .then(() => {
+              router.push("/(auth)/sign-in");
+            })
+            .catch((error) => {
+              console.error("Error clearing AsyncStorage:", error);
+            });
+        }}
+        style={{
+          backgroundColor: "#ff4d4d",
+          padding: 10,
+          borderRadius: 16,
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          height: 60,
+        }}
+      >
+        <TextBold style={{ color: "white", fontWeight: "bold" }}>
+          Sign Out
+        </TextBold>
+      </Pressable>
     </View>
   );
 }
