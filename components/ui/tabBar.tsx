@@ -4,11 +4,11 @@ import React from "react";
 import { Colors } from "@/constants/Colors";
 import HomeOutline from "../icons/HomeOutline";
 import UserOutline from "../icons/UserOutline";
-import LinkRoundOutline from "../icons/LinkRoundOutline";
+import ChatsOutline from "../icons/ChatsOutline";
 
 const icons: Record<string, React.ReactNode> = {
   index: <HomeOutline size={26} />,
-  matches: <LinkRoundOutline size={26} />,
+  chats: <ChatsOutline size={26} />,
   profile: <UserOutline size={26} />,
 };
 
